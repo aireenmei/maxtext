@@ -14,4 +14,7 @@
 
 export LIBTPU_INIT_ARGS="--xla_enable_async_all_gather=true TPU_MEGACORE=MEGACORE_DENSE"
 RUN_NAME=1x_v4-512_4kseq_001
-python3 MaxText/train.py MaxText/configs/base.yml run_name=${RUN_NAME} enable_profiler=true enable_checkpointing=false steps=5 ici_fsdp_parallelism=256 ici_tensor_parallelism=1 base_num_decoder_layers=46 per_device_batch_size=2 remat_policy=full base_emb_dim=5120 base_mlp_dim=20480 base_num_heads=40 learning_rate=1e-8
+python3 MaxText/train.py MaxText/configs/base.yml run_name=${RUN_NAME} \
+    enable_profiler=true enable_checkpointing=false steps=5 ici_fsdp_parallelism=256 ici_tensor_parallelism=1 \
+    base_num_decoder_layers=46 per_device_batch_size=2 remat_policy=full base_emb_dim=5120 \
+    base_mlp_dim=20480 base_num_heads=40 learning_rate=1e-8

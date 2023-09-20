@@ -237,17 +237,9 @@ def preprocess_dataset(config: ml_collections.ConfigDict,
   if vocab_path is None:
     vocab_path = os.path.expanduser('~/lm1b_sentencepiece_model')
 
-  # Train or load tokenizer
-  # Use tf.data.Dataset for training the tokenizer
-
-  # sp_tokenizer = tokenizer.load_or_train_tokenizer(
-  #     train_ds,
-  #     vocab_path=vocab_path,
-  #     vocab_size=config.vocab_size,
-  #     max_corpus_chars=config.max_corpus_chars)
-
-  sp_tokenizer = T5Tokenizer.from_pretrained('t5-base')
-
+  # Load tokenizer
+  sp_tokenizer = tokenizer.load_tokenizer(vocab_path=vocab_path,
+                                          vocab_size=config.vocab_size)
 
   # Tokenize data.
   class TokenizeOperation():

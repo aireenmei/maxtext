@@ -33,7 +33,6 @@ import numpy as np
 
 import grain.python as pygrain
 
-from transformers import T5Tokenizer
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 Features = Dict[str, tf.Tensor]

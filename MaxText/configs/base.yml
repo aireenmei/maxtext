@@ -98,7 +98,7 @@ ici_tensor_parallelism: 1
 # Dataset
 # Replace with your path given as argument in download_dataset.sh, e.g. "gs://my-maxtext-dataset/"
 # dataset_path: "gs://maxtext-dataset/"
-dataset_path: "~/tensorflow_datasets/"
+dataset_path: "~/gcsfuse/array_record/"
 vocab_size: 32_768 # powers of 2 for sharding
 assets_path: "assets"
 vocab_relative_path: "tokenizer"  # Assumes we're allowed
